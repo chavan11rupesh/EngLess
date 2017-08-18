@@ -43,3 +43,8 @@
  :user-login
  (fn [db [_ value]]
    (assoc db :user-login value)))
+
+(reg-event-db
+ :dict-meaning
+ (fn [db [_ meaning]]
+   (assoc db :dict-meaning meaning)))

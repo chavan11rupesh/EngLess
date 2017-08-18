@@ -16,6 +16,12 @@
  (fn [db _]
    (or (:word-day db) {})))
 
+(reg-sub
+ :dict-meaning
+ (fn [db _]
+   (or (:dict-meaning db) {:mean ""
+                           :usage ""})))
+
 
 (reg-sub
  :words

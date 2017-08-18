@@ -9,7 +9,8 @@
             [engless.ajax :refer [load-interceptors!]]
             [engless.handlers]
             [engless.subscriptions]
-            [soda-ash.core :as sa])
+            [soda-ash.core :as sa]
+            [clojure.string :as str])
   (:import goog.History))
 
 (enable-console-print!)
@@ -25,6 +26,10 @@
 (def locations [{:key 1 :text "Airport" :value :airport}
                 {:key 2 :text "Railway Station" :value :train}
                 {:key 3 :text "Restaurant" :value :restaurant}])
+
+(defn login-error
+  []
+  (js/alert "Failed to logged in!"))
 
 (defn get-by-id
   [id]
@@ -96,21 +101,48 @@
 
 
 (defn dictionary-handler
-  [response]
-  (js/alert (:definition (first ((last (response :results)) :senses)))))
+  [word [response]]
+  (let [[defination] (:senses response)
+        [usage] (:examples defination)]
+    (if (empty? defination)
+      (js/alert "Word Not Found!")
+      (rf/dispatch [:dict-meaning {:word word
+                                   :mean (:definition defination)
+                                   :usage (:text usage)}]))))
+
+
+
 
 
 
 
 (defn dictionary-page
   []
-  (GET (str server "dictionary")
-       {:params {:word "gun"}
-        :format :json
-        :response-format :json
-        :keywords? true
-        :handler dictionary-handler
-        :error-handler error-handler}) [:div])
+  [:div.home
+   [:div.word-day
+    [:h2 {:style {:color "White"}} "Search for?"]
+    [:form {
+            :on-submit (fn []
+                         (let [word (get-by-id "dict-search")]
+                           (GET (str server "dictionary")
+                                {:params {:word word}
+                                 :format :json
+                                 :response-format :json
+                                 :keywords? true
+                                 :handler #(dictionary-handler word (% :results))
+                                 :error-handler error-handler})))}
+     [:input {:type "text" :id "dict-search"}]
+     [:input {:type "submit" :value "Go"}]]
+    [:h3 (str "Last Word : " (:word @(rf/subscribe [:dict-meaning])))]
+    [sa/Card
+     [sa/CardContent
+      [sa/CardMeta "Meaning"]
+      [sa/CardDescription (str/capitalize (:mean @(rf/subscribe [:dict-meaning])))]]]
+    [sa/Card
+     [sa/CardContent
+      [sa/CardMeta "Usage"]
+      [sa/CardDescription (str/capitalize (:usage @(rf/subscribe [:dict-meaning])))]]]]])
+
 
 
 (defn get-dropdown-value [event data]
@@ -153,7 +185,6 @@
    [:div.logo
     [:img {:src (str js/context "/img/Engless.png")}]]
    [:div.location-dropdown
-
     [sa/Dropdown {:fluid true
                   :selection true
                   :placeholder "Select Location"
@@ -198,6 +229,9 @@
             :scrolling "no"
             :height "550px"
             :width "100%"}])
+
+
+
 
 
 

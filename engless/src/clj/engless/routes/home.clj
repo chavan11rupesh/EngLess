@@ -11,7 +11,7 @@
 (def word-day "http://urban-word-of-the-day.herokuapp.com")
 
 
-(def dictionary "http://api.pearson.com/v2/dictionaries/entries?headword=")
+(def dictionary "http://api.pearson.com/v2/dictionaries/wordwise/entries?headword=")
 
 (defn home-page []
   (layout/render "home.html"))
