@@ -32,7 +32,7 @@
                  [ring/ring-defaults "0.3.1"]
                  [secretary "1.2.3"]
                  [selmer "1.11.0"]
-                 [soda-ash "0.3.0"]]
+                 [soda-ash "0.3.0"]
                  [clj-http "3.7.0"]]
 
   :min-lein-version "2.0.0"

@@ -13,7 +13,7 @@
   (:import goog.History))
 
 ;; link to get word of the day
-(def server "http://localhost/")
+(def server "http://localhost:3000/")
 
 
 (defn get-by-id
@@ -66,6 +66,7 @@
 
 
 (defn home-page []
+  (word-of-the-day)
   [:div
    [:header
     [navbar]
@@ -73,11 +74,6 @@
      [:div.logo
       [:img {:src (str js/context "/img/Engless.png")}]]]
     [:div.word-day
-
- [:div
-  [:header
-   [navbar]
-    [:div.hero
      [:h1 "WORD OF THE DAY"]
      [sa/Card "hello"
       [sa/CardMeta "sdffhksda;iofsodifjsda fsdfsdofsdfjsd fsd fsodfhsdofhsodfh sdf sdfohsdofh"]]
