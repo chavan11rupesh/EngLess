@@ -27,3 +27,8 @@
  :words
  (fn [db _]
    (or (:words db) [{}])))
+
+(reg-sub
+ :logged-in
+ (fn [db _]
+   (or (:logged-in db) false)))

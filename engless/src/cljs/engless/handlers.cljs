@@ -48,3 +48,9 @@
  :dict-meaning
  (fn [db [_ meaning]]
    (assoc db :dict-meaning meaning)))
+
+
+(reg-event-db
+ :logged-in
+ (fn [db [_ value]]
+   (assoc db :logged-in value)))

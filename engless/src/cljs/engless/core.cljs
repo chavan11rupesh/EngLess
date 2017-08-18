@@ -200,6 +200,7 @@
   [response]
   (println response)
   (when response
+    (rf/dispatch [:logged-in true])
     (let [level (response :levl)]
            (GET (str server "word")
                 {:params {:level level}
@@ -207,7 +208,6 @@
                  :response-format :json
                  :keywords? true
                  :handler #(rf/dispatch [:word-level %])}))
-    (rf/dispatch [:user-login true])
     (println "hsdfsd")
     (rf/dispatch [:set-active-page :game])))
 
@@ -217,9 +217,7 @@
   (when response
       (js/alert ("Welcome!!  Registered successfully!!!"))))
 
-(defn login-error
-  []
-  (js/alert "Failed to logged in!"))
+
 
 
 
@@ -233,65 +231,76 @@
 
 
 
+(defn login-modal
+  []
+  [sa/Modal {:trigger (r/as-element [sa/Button {:positive true} "Start"])}
+        [sa/ModalHeader "Login"]
+        [sa/ModalContent {:image true}
+         [sa/Image {:wrapped true
+                    :size    "small"
+                    :src     "http://semantic-ui.com/images/avatar2/large/rachel.png"}]
+         [sa/ModalDescription
+          [sa/Header ""]
+          [:form {
+                  :on-submit (fn [e]
+                               (.preventDefault e)
+                               (let [user (get-by-id "user")
+                                     pass (get-by-id "pass")]
+                                 (log user pass)
+                                 (GET (str server "user")
+                                      {:params {:user user
+                                                :password pass}
+                                       :format :json
+                                       :response-format :json
+                                       :keywords? true
+                                       :handler login-handler
+                                       :error-handler login-error})))}
+           [:div.form-group[:input.form-control{:type "text" :id "user"}]]
+           [:div.form-group [:input.form-control {:type "password" :id "pass"}]]
+           [:div [:input.btn.btn-primary{:type "submit" :value "Login"}]]]]]]
+  )
 
+
+
+(defn register-modal
+  []
+  [sa/Modal {:trigger (r/as-element [sa/Button {:positive true} "Register"])}
+        [sa/ModalHeader "Register"]
+        [sa/ModalContent {:image true}
+         [sa/Image {:wrapped true
+                    :size    "small"
+                    :src     "http://semantic-ui.com/images/avatar2/large/rachel.png"}]
+         [sa/ModalDescription
+          [sa/Header ""]
+          [:form {:action "#" :method "get"
+                  :on-submit (fn [e]
+                               (let [user (get-by-id "reg-user")
+                                     pass (get-by-id "reg-pass")
+                                     email-id (get-by-id "reg-email")]
+                                 #_(log user pass)
+                                 (POST (str server "signup")
+                                       {:params {:user user
+                                                 :password pass
+                                                 :email email-id}
+                                        :format :json
+                                        :response-format :json
+                                        :keywords? true
+                                        :handler register-handler
+                                        :error-handler login-error})))}
+           [:div.form-group[:input.form-control{:type "text" :id "reg-user"}]]
+           [:div.form-group [:input.form-control {:type "password" :id "reg-pass"}]]
+           [:div.form-group [:input.form-control {:type "email" :id "reg-email"}]]
+           [:div [:input.btn.btn-primary{:type "submit" :value "Register"}]]]]]])
 
 (defn login-page
   []
-  [:div.home
-   [:div.logo
-    [:div.word-day
-     [sa/Modal {:trigger (r/as-element [sa/Button {:positive true} "Start"])}
-      [sa/ModalHeader "Login"]
-      [sa/ModalContent {:image true}
-       [sa/Image {:wrapped true
-                  :size    "small"
-                  :src     "http://semantic-ui.com/images/avatar2/large/rachel.png"}]
-       [sa/ModalDescription
-        [sa/Header ""]
-        [:form {
-                :on-submit (fn [e]
-                             (.preventDefault e)
-                             (let [user (get-by-id "user")
-                                   pass (get-by-id "pass")]
-                               (log user pass)
-                               (GET (str server "user")
-                                    {:params {:user user
-                                              :password pass}
-                                     :format :json
-                                     :response-format :json
-                                     :keywords? true
-                                     :handler login-handler
-                                     :error-handler login-error})))}
-         [:div.form-group[:input.form-control{:type "text" :id "user"}]]
-         [:div.form-group [:input.form-control {:type "password" :id "pass"}]]
-         [:div [:input.btn.btn-primary{:type "submit" :value "Login"}]]]]]]
-     [sa/Modal {:trigger (r/as-element [sa/Button {:positive true} "Register"])}
-      [sa/ModalHeader "Register"]
-      [sa/ModalContent {:image true}
-       [sa/Image {:wrapped true
-                  :size    "small"
-                  :src     "http://semantic-ui.com/images/avatar2/large/rachel.png"}]
-       [sa/ModalDescription
-        [sa/Header ""]
-        [:form {:action "#" :method "get"
-                :on-submit (fn [e]
-                             (let [user (get-by-id "reg-user")
-                                   pass (get-by-id "reg-pass")
-                                   email-id (get-by-id "reg-email")]
-                               #_(log user pass)
-                               (POST (str server "signup")
-                                    {:params {:user user
-                                              :password pass
-                                              :email email-id}
-                                     :format :json
-                                     :response-format :json
-                                     :keywords? true
-                                     :handler register-handler
-                                     :error-handler login-error})))}
-         [:div.form-group[:input.form-control{:type "text" :id "reg-user"}]]
-         [:div.form-group [:input.form-control {:type "password" :id "reg-pass"}]]
-         [:div.form-group [:input.form-control {:type "email" :id "reg-email"}]]
-         [:div [:input.btn.btn-primary{:type "submit" :value "Register"}]]]]]]]]])
+  (if @(rf/subscribe [:logged-in])
+    [game-page]
+    [:div.home
+     [:div.logo
+      [:div.word-day
+       [login-modal]
+       [register-modal]]]]))
 
 
 
