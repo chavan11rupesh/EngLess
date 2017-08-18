@@ -102,7 +102,13 @@ h1{
 
 
 
+.game{
+    max-width:800px;
+    overflow: hidden;
+    position: relative;
+    border: none;
 
+}
 
 .navbar-divider,
 .navbar-nav .nav-item+.nav-item,

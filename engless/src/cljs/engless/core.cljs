@@ -15,6 +15,10 @@
 (enable-console-print!)
 (println "dev mode")
 
+
+
+
+
 ;; link to get word of the day
 (def server "http://localhost:3000/")
 
@@ -73,26 +77,27 @@
 
 
 (defn home-page []
-  [:div.home
-   [:div.row
-    [:div.logo
-     [:img {:src (str js/context "/img/Engless.png")}]]]
-   [:div.word-day
-    [:h1 "WORD OF THE DAY"]
-    [sa/Card
-     [sa/CardContent
-      [sa/CardHeader  (@(rf/subscribe [:word-day]) :word)]
-      [sa/CardMeta "Meaning"]
-      [sa/CardDescription (@(rf/subscribe [:word-day]) :meaning)]]]
-    [:div.button-awesome
-     [:a.btn.btn-full {:href "#/words"} "GET STARTED"]]]])
+  [:div
+   [:div.home
+    [:div.row
+     [:div.logo
+      [:img {:src (str js/context "/img/Engless.png")}]]]
+    [:div.word-day
+     [:h1 "WORD OF THE DAY"]
+     [sa/Card
+      [sa/CardContent
+       [sa/CardHeader  (@(rf/subscribe [:word-day]) :word)]
+       [sa/CardMeta "Meaning"]
+       [sa/CardDescription (@(rf/subscribe [:word-day]) :meaning)]]]
+     [:div.button-awesome
+      [:a.btn.btn-full {:href "#/words"} "GET STARTED"]]]]])
 
 
 
 
 (defn dictionary-handler
   [response]
-  (js/alert    (:definition (first ( (last (response :results)) :senses)))))
+  (js/alert (:definition (first ((last (response :results)) :senses)))))
 
 
 
@@ -100,7 +105,7 @@
 (defn dictionary-page
   []
   (GET (str server "dictionary")
-       {:params {:word "hello"}
+       {:params {:word "gun"}
         :format :json
         :response-format :json
         :keywords? true
@@ -154,24 +159,32 @@
                   :placeholder "Select Location"
                   :options locations
                   :onChange (fn [e data]
-                              (get-location-words (get-dropdown-value  e data)))}]
-    [:h3 "Commonly used words at the choosen location"]
-    ][words-of-location]])
+                              (get-location-words (get-dropdown-value e data)))}]
+    [:h3 "Commonly used words at the choosen location"]]
+   [words-of-location]])
 
 
 (defn login-handler
   "when logged in then play game"
   [response]
+  (println response)
   (when response
     (let [level (response :levl)]
-      (GET (str server "word")
-           {:params {:level level}
-            :format :json
-            :response-format :json
-            :keywords? true
-            :handler #(rf/dispatch [:word-level %])}))
+           (GET (str server "word")
+                {:params {:level level}
+                 :format :json
+                 :response-format :json
+                 :keywords? true
+                 :handler #(rf/dispatch [:word-level %])}))
+    (rf/dispatch [:user-login true])
+    (println "hsdfsd")
     (rf/dispatch [:set-active-page :game])))
 
+
+(defn register-handler
+  [response]
+  (when response
+      (js/alert ("Welcome!!  Registered successfully!!!"))))
 
 (defn login-error
   []
@@ -181,7 +194,10 @@
 
 (defn game-page
   []
-  (let [word-data @(rf/subscribe [:word-level])]))
+  [:iframe.game {:src "https://www.gamestolearnenglish.com/htmlGames/fastEnglish/v12.1/index.html#site/personal"
+            :scrolling "no"
+            :height "550px"
+            :width "100%"}])
 
 
 
@@ -198,11 +214,12 @@
                   :src     "http://semantic-ui.com/images/avatar2/large/rachel.png"}]
        [sa/ModalDescription
         [sa/Header ""]
-        [:form {:action "#" :method "get"
+        [:form {
                 :on-submit (fn [e]
+                             (.preventDefault e)
                              (let [user (get-by-id "user")
                                    pass (get-by-id "pass")]
-                               #_(log user pass)
+                               (log user pass)
                                (GET (str server "user")
                                     {:params {:user user
                                               :password pass}
@@ -213,9 +230,34 @@
                                      :error-handler login-error})))}
          [:div.form-group[:input.form-control{:type "text" :id "user"}]]
          [:div.form-group [:input.form-control {:type "password" :id "pass"}]]
-         [:div [:input.btn.btn-primary{:type "submit" :value "Login"}]]]]]]]]])
-
-
+         [:div [:input.btn.btn-primary{:type "submit" :value "Login"}]]]]]]
+     [sa/Modal {:trigger (r/as-element [sa/Button {:positive true} "Register"])}
+      [sa/ModalHeader "Register"]
+      [sa/ModalContent {:image true}
+       [sa/Image {:wrapped true
+                  :size    "small"
+                  :src     "http://semantic-ui.com/images/avatar2/large/rachel.png"}]
+       [sa/ModalDescription
+        [sa/Header ""]
+        [:form {:action "#" :method "get"
+                :on-submit (fn [e]
+                             (let [user (get-by-id "reg-user")
+                                   pass (get-by-id "reg-pass")
+                                   email-id (get-by-id "reg-email")]
+                               #_(log user pass)
+                               (POST (str server "signup")
+                                    {:params {:user user
+                                              :password pass
+                                              :email email-id}
+                                     :format :json
+                                     :response-format :json
+                                     :keywords? true
+                                     :handler register-handler
+                                     :error-handler login-error})))}
+         [:div.form-group[:input.form-control{:type "text" :id "reg-user"}]]
+         [:div.form-group [:input.form-control {:type "password" :id "reg-pass"}]]
+         [:div.form-group [:input.form-control {:type "email" :id "reg-email"}]]
+         [:div [:input.btn.btn-primary{:type "submit" :value "Register"}]]]]]]]]])
 
 
 

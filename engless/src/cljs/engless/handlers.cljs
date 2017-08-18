@@ -37,3 +37,9 @@
  :word-level
  (fn [db [_ word-level]]
    (assoc db :word-level word-level)))
+
+
+(reg-event-db
+ :user-login
+ (fn [db [_ value]]
+   (assoc db :user-login value)))

@@ -18,11 +18,12 @@
 
 
 (defn insert-user-db [user password email]
-  (acknowledged? (mc/insert db "users" {:user user
+  (acknowledged? (mc/insert db "users" {:name user
                                         :pass password
                                         :email email})))
 
 (defn update-user [id first-name last-name email]
+
   (mc/update db "users" {:_id id}
              {$set {:first_name first-name
                     :last_name last-name
