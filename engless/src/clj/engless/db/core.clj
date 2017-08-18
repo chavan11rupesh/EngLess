@@ -21,5 +21,25 @@
                     :last_name last-name
                     :email email}}))
 
-(defn get-user [id]
-  (mc/find-one-as-map db "users" {:_id id}))
+
+
+(defn create-words [word meaning img syn  location level]
+  (mc/insert db "words" {:word word
+                         :mean meaning
+                         :imgp img
+                         :synm syn
+                         :locn location
+                         :levl level}))
+
+
+(defn return-words-at [location]
+  (mc/find-maps db "words" {:locn location}))
+
+
+(defn return-word-of [level]
+   (mc/find-one-as-map db "words" {:levl level}))
+
+
+
+(defn get-user [user]
+  (mc/find-one-as-map db "users" {:name user}))
