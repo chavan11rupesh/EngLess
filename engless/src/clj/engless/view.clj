@@ -15,3 +15,8 @@
 (defn check-user [user password]
   (if-let [user-map (db/get-user user)]
     (= password (user-map :pass))))
+
+
+
+(defn insert-user [user password email]
+  (db/insert-user-db user password email))

@@ -64,16 +64,10 @@
 
 
 
-
-
 (defn home-page []
  [:div
   [:header
    [navbar]
-    [:div.row
-     [:div.logo
-      [:img {:src (str js/context "/img/Engless.png")}]]
-     ]
     [:div.hero
      [:h1 "WORD OF THE DAY"]
      [:div.button-awesome
@@ -82,6 +76,7 @@
    #_[:section.features
     [:h3 [:center ""]]
       [:p.copy ""]]])
+
 
 (defn game-page
   []
