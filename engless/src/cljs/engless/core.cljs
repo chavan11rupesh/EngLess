@@ -12,9 +12,15 @@
             [soda-ash.core :as sa])
   (:import goog.History))
 
+(enable-console-print!)
+(println "dev mode")
+
 ;; link to get word of the day
 (def server "http://localhost:3000/")
 
+(def locations [{:key 1 :text "Airport" :value 1}
+                {:key 2 :text "Railway Station" :value 2}
+                {:key 3 :text "Restaurant" :value 3}])
 
 (defn get-by-id
   [id]
@@ -67,7 +73,6 @@
 
 
 (defn home-page []
-  (word-of-the-day)
   [:div.home
    [:div.row
     [:div.logo
@@ -78,9 +83,25 @@
      [sa/CardHeader  (@(rf/subscribe [:word-day]) :word)]
      [sa/CardMeta  (@(rf/subscribe [:word-day]) :meaning)]]
     [:div.button-awesome
-     [:a.btn.btn-full {:href "#"} "GET STARTED"]]]])
+     [:a.btn.btn-full {:href "#/words"} "GET STARTED"]]]])
 
+(defn get-dropdown-value [event data]
+  (-> data
+      (js->clj :keywordize-keys true)
+      :value))
 
+(defn words-page
+  []
+  [:div.home
+   [:div.logo
+    [:img {:src (str js/context "/img/Engless.png")}]]
+   [:div.word-day
+    [sa/Dropdown {:fluid true
+                  :selection true
+                  :placeholder "Select Location"
+                  :options locations
+                  :onChange (fn [e data]
+                              (rf/dispatch [:location (get-dropdown-value  e data)]))}]]])
 
 
 (defn login-handler
@@ -117,6 +138,8 @@
      [:div [:input.btn.btn-primary.form-control {:type "submit" :value "Login"}]]]]])
 
 
+
+
 (defn dictionary-page
   []
   [:div
@@ -135,6 +158,7 @@
    :game #'game-page
    :dictionary #'dictionary-page
    :revision #'revision-page
+   :words #'words-page
    })
 
 (defn page []
@@ -154,6 +178,9 @@
 
 (secretary/defroute "/dictionary" []
   (rf/dispatch [:set-active-page :dictionary]))
+
+(secretary/defroute "/words" []
+  (rf/dispatch [:set-active-page :words]))
 
 (secretary/defroute "/revision" []
   (rf/dispatch [:set-active-page :revision]))
@@ -184,4 +211,5 @@
   (load-interceptors!)
   (fetch-docs!)
   (hook-browser-navigation!)
-  (mount-components))
+  (mount-components)
+  (word-of-the-day))
