@@ -364,6 +364,7 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/engless/cor
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.63 seconds.[0m
 notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
 [0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+<<<<<<< Updated upstream
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.605 seconds.[0m
 notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
 [0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
@@ -500,4 +501,106 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/engless/cor
 notifying browser that file changed:  target/cljsbuild/public/js/out/engless/subscriptions.js
 [0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.604 seconds.[0m
+=======
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.007 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.438 seconds.[0m
+[36m----  Could not Read  src/cljs/engless/core.cljs   line:81 ----[0m
+
+  [1m/home/rupesh/EngLess/engless/src/cljs/engless/core.cljs [line 81, col 32] The map literal starting with :href on line 81 column 24 contains 1 form(s). Map literals must contain an even number of forms.[0m
+
+  [36m79[0m  [36m      [sa/CardMeta "sdffhksda;iofsodifjsda fsdfsdofsdfjsd fsd fsodfhsdofhsodfh sdf sdfohsdofh"]][0m
+  [36m80[0m  [36m     [:div.button-awesome[0m
+  [33m81[0m  [1m      [:a.btn.btn-full {:href } "GET STARTED"]]]]])[0m
+  [0m  [0m  [33m      /home/rupesh/EngLess/engless/src/cljs/engless/core.cljs [line 81, col 32] The map literal starting with :href on line 81 column 24 contains 1 form(s). Map literals must contain an even number of forms.[0m
+  [36m82[0m  [36m[0m
+  [36m83[0m  [36m[0m
+  [36m84[0m  [36m(defn game-page[0m
+
+[36m----  Reader Error : Please see src/cljs/engless/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.793 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/engless/core.cljs   line:101  column:43  ----[0m
+
+  [1mUse of undeclared Var engless.core/login-handler[0m
+
+  [36m 97[0m  [36m                                     :password pass}[0m
+  [36m 98[0m  [36m                            :format :json[0m
+  [36m 99[0m  [36m                            :response-format :json[0m
+  [36m100[0m  [36m                            :keywords? true[0m
+  [33m101[0m  [1m                            :handler login-handler[0m
+  [0m   [0m  [33m                                     ^--- Use of undeclared Var engless.core/login-handler[0m
+  [36m102[0m  [36m                            :error-handler login-error})))}[0m
+  [36m103[0m  [36m[:div.form-group[:input.form-control {:type "text" :id "user"}]][0m
+  [36m104[0m  [36m[:div.ui.input.focus.form-group [:input {:type "text" :id "pass"}]][0m
+  [36m105[0m  [36m[:div [:input.btn.btn-primary.form-control {:type "submit" :value "Login"}]]]]])[0m
+
+[36m----  Compiler Warning : Please see src/cljs/engless/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/engless/core.cljs   line:102  column:49  ----[0m
+
+  [1mUse of undeclared Var engless.core/login-error[0m
+
+  [36m 98[0m  [36m                            :format :json[0m
+  [36m 99[0m  [36m                            :response-format :json[0m
+  [36m100[0m  [36m                            :keywords? true[0m
+  [36m101[0m  [36m                            :handler login-handler[0m
+  [33m102[0m  [1m                            :error-handler login-error})))}[0m
+  [0m   [0m  [33m                                           ^--- Use of undeclared Var engless.core/login-error[0m
+  [36m103[0m  [36m[:div.form-group[:input.form-control {:type "text" :id "user"}]][0m
+  [36m104[0m  [36m[:div.ui.input.focus.form-group [:input {:type "text" :id "pass"}]][0m
+  [36m105[0m  [36m[:div [:input.btn.btn-primary.form-control {:type "submit" :value "Login"}]]]]])[0m
+
+[36m----  Compiler Warning : Please see src/cljs/engless/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.832 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/engless/core.cljs   line:110  column:49  ----[0m
+
+  [1mUse of undeclared Var engless.core/login-error[0m
+
+  [36m106[0m  [36m                            :format :json[0m
+  [36m107[0m  [36m                            :response-format :json[0m
+  [36m108[0m  [36m                            :keywords? true[0m
+  [36m109[0m  [36m                            :handler login-handler[0m
+  [33m110[0m  [1m                            :error-handler login-error})))}[0m
+  [0m   [0m  [33m                                           ^--- Use of undeclared Var engless.core/login-error[0m
+  [36m111[0m  [36m[:div.form-group[:input.form-control {:type "text" :id "user"}]][0m
+  [36m112[0m  [36m[:div.ui.input.focus.form-group [:input {:type "text" :id "pass"}]][0m
+  [36m113[0m  [36m[:div [:input.btn.btn-primary.form-control {:type "submit" :value "Login"}]]]]])[0m
+
+[36m----  Compiler Warning : Please see src/cljs/engless/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.672 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.639 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.589 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.643 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.707 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.667 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.648 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.54 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.524 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.545 seconds.[0m
+>>>>>>> Stashed changes
 notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js

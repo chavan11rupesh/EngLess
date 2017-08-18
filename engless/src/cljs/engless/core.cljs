@@ -82,11 +82,39 @@
 
 
 
+
+(defn login-handler
+  [flag]
+  (when flag
+    (js/alert "success")))
+
+
+(defn login-error
+  []
+  (js/alert "Failed to logged in!"))
+
+
 (defn game-page
   []
   [:div
-   [:h2 "sds"]]
-  )
+   [:div.container
+    [:h2 "Login page"]
+    [:form {:action "#" :method "get"
+            :on-submit (fn [e]
+                         (let [user (get-by-id "user")
+                               pass (get-by-id "pass")]
+                           (log user pass)
+                           (GET (str server "user")
+                                {:params {:user user
+                                          :password pass}
+                                 :format :json
+                                 :response-format :json
+                                 :keywords? true
+                                 :handler login-handler
+                                 :error-handler login-error})))}
+     [:div.form-group[:input.form-control {:type "text" :id "user"}]]
+     [:div.ui.input.focus.form-group [:input {:type "text" :id "pass"}]]
+     [:div [:input.btn.btn-primary.form-control {:type "submit" :value "Login"}]]]]])
 
 
 (defn dictionary-page
