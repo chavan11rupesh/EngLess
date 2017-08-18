@@ -86,7 +86,7 @@
    [:div.home
     [:div.row
      [:div.logo
-      [:img {:src (str js/context "/img/Engless.png")}]]]
+      [:a [:img {:src (str js/context "/img/Engless.png")}]]]]
     [:div.word-day
      [:h1 "WORD OF THE DAY"]
      [sa/Card
