@@ -1,23 +1,126 @@
-html,
-body {
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    height: 100%;
+
+*{
+    margin:0;
+    padding:0;
 }
-.navbar {
-  margin-bottom: 10px;
-  border-radius: 0px;
+
+body{
+    font-family: tahoma;
+    <!--background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("/hero2.jpg");
 }
-.navbar-brand {
-  float: none;
+
+.hero{
+    position:absolute;
+    width:1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-.navbar-nav .nav-item {
-  float: none;
+
+header{
+    height:100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("/img/a2.jpg");
+    background-position: center;
+    background-size: cover;
 }
-.navbar-divider,
-.navbar-nav .nav-item+.nav-item,
-.navbar-nav .nav-link + .nav-link {
-  margin-left: 0;
+
+h1{
+    color:white;
 }
+
+.row{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.main-nav{
+    list-style: none;
+    float:right;
+    margin-top: 50px;
+}
+
+.main-nav li{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.main-nav li a{
+    color:white;
+    text-decoration: none;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.main-nav li a:hover{
+    color: #e67e22;
+    border-bottom: 2px solid #e67e22;
+    transition: all 0.5s ease-in;
+    padding: 15px 0;
+}
+
+.logo img{
+    height: 100px;
+    float:left;
+    margin-top:30px;
+}
+
+.btn{
+    border: 1px solid #e67e22;
+    padding: 10px 39px;
+    color: #e67e22;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+
+
+.btn-full:hover{
+    background-color: #e67e22;
+    color:white;
+    transition: all 0.5s ease-in;
+}
+
+.button-awesome{
+    margin-top: 40px;
+}
+
+.features h3{
+}
+
+.copy{
+    width: 70%;
+    margin-left: 15%;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (min-width: 34em) {
   .navbar-brand {
     float: left;
@@ -66,4 +169,3 @@ body {
         transform: rotate(360deg);
     }
 }
-

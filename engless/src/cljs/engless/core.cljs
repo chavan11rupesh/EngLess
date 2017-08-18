@@ -19,38 +19,40 @@
       {:href uri
        :on-click #(reset! collapsed? true)} title]]))
 
-(defn navbar []
-  (r/with-let [collapsed? (r/atom true)]
-    [:nav.navbar.navbar-dark.bg-primary
-     [:button.navbar-toggler.hidden-sm-up
-      {:on-click #(swap! collapsed? not)} "☰"]
-     [:div.collapse.navbar-toggleable-xs
-      (when-not @collapsed? {:class "in"})
-      [:a.navbar-brand {:href "#/"} "engless"]
-      [:ul.nav.navbar-nav
-       [nav-link "#/" "Home" :home collapsed?]
-       [nav-link "#/about" "About" :about collapsed?]]]]))
 
-(defn about-page []
-  [:div.container
-   [:div.row
-    [:div.col-md-12
-     [:img {:src (str js/context "/img/warning_clojure.png")}]]]])
+
+
 
 (defn home-page []
-  [:div.container
-   (when-let [docs @(rf/subscribe [:docs])]
-     [:div.row>div.col-sm-12
-      [:div {:dangerouslySetInnerHTML
-             {:__html (md->html docs)}}]])])
+ [:div
+   [:header
+    [:div.row
+     [:div.logo
+      [:img {:src (str js/context "/img/Engless.jpg")}]]
+     [:ul.main-nav
+      [:li
+       [:a {:href ""} "Home"]]
+      [:li
+       [:a {:href ""} "Game"]]
+      [:li
+       [:a {:href ""} "Dictionary"]]
+      [:li
+       [:a {:href ""} "Contact us"]]]]
+    [:div.hero
+     [:h1 "LEARNING IS A TREASURE THAT WILL" [:br] "FOLLOW ITS OWENER EVERYWHERE."]
+     [:div.button-awesome
+      [:a.btn.btn-full {:href ""} "Show more"]
+      ]]]
+   [:section.features
+    [:h3 [:center ""]]
+    [:p.copy ""]]])
 
 (def pages
-  {:home #'home-page
-   :about #'about-page})
+  {:home #'home-page})
 
 (defn page []
   [:div
-   [navbar]
+
    [(pages @(rf/subscribe [:page]))]])
 
 ;; -------------------------
@@ -60,8 +62,7 @@
 (secretary/defroute "/" []
   (rf/dispatch [:set-active-page :home]))
 
-(secretary/defroute "/about" []
-  (rf/dispatch [:set-active-page :about]))
+
 
 ;; -------------------------
 ;; History
