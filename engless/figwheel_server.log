@@ -604,3 +604,112 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/engless/cor
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.545 seconds.[0m
 >>>>>>> Stashed changes
 notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.76 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.803 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.691 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.612 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/engless/core.cljs   line:103  column:6  ----[0m
+
+  [1mUse of undeclared Var soda-ash.core/ModelContent[0m
+
+  [36m 99[0m  [36m[][0m
+  [36m100[0m  [36m[:div.container[0m
+  [36m101[0m  [36m [sa/Modal {:trigger (r/as-element [sa/Button "Login"])}[0m
+  [36m102[0m  [36m  [sa/ModalHeader [:button.close {:data-dismiss "modal"} "x"]][0m
+  [33m103[0m  [1m  [sa/ModelContent[0m
+  [0m   [0m  [33m   ^--- Use of undeclared Var soda-ash.core/ModelContent[0m
+  [36m104[0m  [36m   [:form {:action "#" :method "get"[0m
+  [36m105[0m  [36m           :on-submit (fn [e][0m
+  [36m106[0m  [36m                        (let [user (get-by-id "user")[0m
+  [36m107[0m  [36m                              pass (get-by-id "pass")][0m
+  [36m108[0m  [36m                          (log user pass)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/engless/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.684 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.538 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.583 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.635 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.518 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.552 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.565 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.615 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.548 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.517 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.578 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.54 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.501 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.55 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.534 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.503 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.523 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.553 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.488 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.491 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.517 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.492 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.495 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.499 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.491 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.475 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js

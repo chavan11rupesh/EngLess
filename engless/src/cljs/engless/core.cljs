@@ -105,9 +105,10 @@
 
 
 (defn login-handler
+  "when logged in then play game"
   [flag]
   (when flag
-    (js/alert "success")))
+    ))
 
 
 (defn login-error
@@ -117,25 +118,39 @@
 
 (defn game-page
   []
+  [:div.word-day
+   [sa/Modal {:trigger (r/as-element [sa/Button {:positive true} "Start"])}
+    [sa/ModalHeader "Login"]
+    [sa/ModalContent {:image true}
+     [sa/Image {:wrapped true
+                :size    "small"
+                :src     "http://semantic-ui.com/images/avatar2/large/rachel.png"}]
+     [sa/ModalDescription
+      [sa/Header ""]
+      [:form {:action "#" :method "get"
+              :on-submit (fn [e]
+                           (let [user (get-by-id "user")
+                                 pass (get-by-id "pass")]
+                             (log user pass)
+                             (GET (str server "user")
+                                  {:params {:user user
+                                            :password pass}
+                                   :format :json
+                                   :response-format :json
+                                   :keywords? true
+                                   :handler login-handler
+                                   :error-handler login-error})))}
+       [:div.form-group[:input.form-control{:type "text" :id "user"}]]
+       [:div.form-group [:input.form-control {:type "password" :id "pass"}]]
+       [:div [:input.btn.btn-primary{:type "submit" :value "Login"}]]]]]]])
+
+
+(defn game-page2
+  []
   [:div
    [:div.container
     [:h2 "Login page"]
-    [:form {:action "#" :method "get"
-            :on-submit (fn [e]
-                         (let [user (get-by-id "user")
-                               pass (get-by-id "pass")]
-                           (log user pass)
-                           (GET (str server "user")
-                                {:params {:user user
-                                          :password pass}
-                                 :format :json
-                                 :response-format :json
-                                 :keywords? true
-                                 :handler login-handler
-                                 :error-handler login-error})))}
-     [:div.form-group[:input.form-control {:type "text" :id "user"}]]
-     [:div.ui.input.focus.form-group [:input {:type "text" :id "pass"}]]
-     [:div [:input.btn.btn-primary.form-control {:type "submit" :value "Login"}]]]]])
+    ]])
 
 
 
