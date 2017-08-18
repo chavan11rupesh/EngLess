@@ -257,8 +257,7 @@
                                        :error-handler login-error})))}
            [:div.form-group[:input.form-control{:type "text" :id "user"}]]
            [:div.form-group [:input.form-control {:type "password" :id "pass"}]]
-           [:div [:input.btn.btn-primary{:type "submit" :value "Login"}]]]]]]
-  )
+           [:div [:input.btn.btn-primary{:type "submit" :value "Login"}]]]]]])
 
 
 

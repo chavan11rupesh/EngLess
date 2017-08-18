@@ -21,3 +21,9 @@
 
 (defn insert-user [user password email]
   (db/insert-user-db user password email))
+
+
+(defn get-saved-words
+  [user]
+  (map #(dissoc % :_id)
+       (db/get-saved-words user)))

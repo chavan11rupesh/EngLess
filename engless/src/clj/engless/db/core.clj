@@ -40,6 +40,12 @@
                          :levl level}))
 
 
+
+(defn save-words [user word meaning usage]
+  (mc/insert db user  {:word word
+                               :mean meaning
+                               :usage usage}))
+
 (defn return-words-at [location]
   (mc/find-maps db "words" {:locn location}))
 
@@ -47,6 +53,9 @@
 (defn return-word-of [level]
    (mc/find-one-as-map db "words" {:levl level}))
 
+(defn get-saved-words
+  [user]
+  (mc/find-maps db user {}))
 
 
 (defn get-user [user]

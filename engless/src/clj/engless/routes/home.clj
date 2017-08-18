@@ -49,4 +49,7 @@
        (get-dict-word word))
 
   (GET "/word" [level]
-       (layout/render-json (view/get-word-of level))))
+       (layout/render-json (view/get-word-of level)))
+
+  (GET "/saved-words" [user]
+       (layout/render-json (view/get-saved-words user))))
