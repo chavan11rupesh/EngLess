@@ -8,6 +8,34 @@ body{
     <!--background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("/hero2.jpg");
 }
 
+.cards-loc{
+    postion:relative;
+    margin-top: 30px;
+    margin-left: 110px;
+}
+
+h3{
+    position:relative;
+    margin-top: 10px;
+    width:500px;
+    color: White
+}
+
+.location-dropdown{
+    position:relative;
+    margin-left: 110px;
+    width: 200px;
+
+}
+
+.word-location{
+    position:absolute;
+    max-width: 1140px;
+    top: 60%;
+    left: 40%
+}
+
+
 .word-day{
     position:absolute;
     max-width:1140px;

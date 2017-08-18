@@ -21,3 +21,8 @@
  :word-day
  (fn [db [_ word-day]]
    (assoc db :word-day word-day)))
+
+(reg-event-db
+ :words
+ (fn [db [_ location]]
+   (assoc db :words location)))

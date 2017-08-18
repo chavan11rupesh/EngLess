@@ -18,9 +18,9 @@
 ;; link to get word of the day
 (def server "http://localhost:3000/")
 
-(def locations [{:key 1 :text "Airport" :value 1}
-                {:key 2 :text "Railway Station" :value 2}
-                {:key 3 :text "Restaurant" :value 3}])
+(def locations [{:key 1 :text "Airport" :value :airport}
+                {:key 2 :text "Railway Station" :value :train}
+                {:key 3 :text "Restaurant" :value :restaurant}])
 
 (defn get-by-id
   [id]
@@ -80,8 +80,10 @@
    [:div.word-day
     [:h1 "WORD OF THE DAY"]
     [sa/Card
-     [sa/CardHeader  (@(rf/subscribe [:word-day]) :word)]
-     [sa/CardMeta  (@(rf/subscribe [:word-day]) :meaning)]]
+     [sa/CardContent
+      [sa/CardHeader  (@(rf/subscribe [:word-day]) :word)]
+      [sa/CardMeta "Meaning"]
+      [sa/CardDescription (@(rf/subscribe [:word-day]) :meaning)]]]
     [:div.button-awesome
      [:a.btn.btn-full {:href "#/words"} "GET STARTED"]]]])
 
@@ -90,25 +92,57 @@
       (js->clj :keywordize-keys true)
       :value))
 
+
+
+(defn get-location-words
+  [location]
+  (GET (str server "words")
+       {:params {:location location}
+        :format :json
+        :response-format :json
+        :keywords? true
+        :handler #(rf/dispatch [:words %])
+        :error-handler error-handler}))
+
+(defn word-item
+  [word-map]
+  [sa/Card
+   [sa/CardContent
+    [sa/Image {:floated "left"
+               :size "large"
+               :src (word-map :imgp)}]
+    [sa/CardMeta (word-map :word)]
+    [sa/CardDescription (word-map :mean)]]])
+
+
+(defn words-of-location
+  []
+  [:div.cards-loc
+   [sa/CardGroup
+    (doall (map word-item  @(rf/subscribe [:words])))]])
+
 (defn words-page
   []
   [:div.home
    [:div.logo
     [:img {:src (str js/context "/img/Engless.png")}]]
-   [:div.word-day
+   [:div.location-dropdown
+
     [sa/Dropdown {:fluid true
                   :selection true
                   :placeholder "Select Location"
                   :options locations
                   :onChange (fn [e data]
-                              (rf/dispatch [:location (get-dropdown-value  e data)]))}]]])
+                              (get-location-words (get-dropdown-value  e data)))}]
+    [:h3 "Commonly used words at the choosen location"]
+    ][words-of-location]])
 
 
 (defn login-handler
   "when logged in then play game"
   [flag]
   (when flag
-    ))
+    (js/alert flag)))
 
 
 (defn login-error

@@ -15,3 +15,9 @@
  :word-day
  (fn [db _]
    (or (:word-day db) {})))
+
+
+(reg-sub
+ :words
+ (fn [db _]
+   (or (:words db) [{}])))

@@ -14,7 +14,8 @@
 
 (defn check-user [user password]
   (if-let [user-map (db/get-user user)]
-    (= password (user-map :pass))))
+    (if (= password (user-map :pass))
+      (dissoc user-map :_id))))
 
 
 
