@@ -8,9 +8,9 @@ body{
     <!--background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("/hero2.jpg");
 }
 
-.hero{
+.word-day{
     position:absolute;
-    width:1140px;
+    max-width:1140px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

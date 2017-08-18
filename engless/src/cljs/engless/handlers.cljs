@@ -16,3 +16,8 @@
   :set-docs
   (fn [db [_ docs]]
     (assoc db :docs docs)))
+
+(reg-event-db
+ :word-day
+ (fn [db [_ word-day]]
+   (assoc db :word-day word-day)))

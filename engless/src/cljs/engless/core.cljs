@@ -8,11 +8,12 @@
             [ajax.core :refer [GET POST]]
             [engless.ajax :refer [load-interceptors!]]
             [engless.handlers]
-            [engless.subscriptions])
+            [engless.subscriptions]
+            [soda-ash.core :as sa])
   (:import goog.History))
 
-
-(def word-day "http://urban-word-of-the-day.herokuapp.com/")
+;; link to get word of the day
+(def server "http://localhost/")
 
 
 (defn get-by-id
@@ -56,7 +57,7 @@
 
 (defn word-of-the-day
   []
-  (GET word-day
+  (GET (str server "word-day")
        {:response-format :json
         :keywords? true
         :handler #(rf/dispatch [:word-day %])
@@ -67,21 +68,18 @@
 
 
 (defn home-page []
- [:div
-  [:header
-   [navbar]
+  [:div
+   [:header
+    [navbar]
     [:div.row
      [:div.logo
-      [:img {:src (str js/context "/img/Engless.png")}]]
-     ]
-    [:div.hero
+      [:img {:src (str js/context "/img/Engless.png")}]]]
+    [:div.word-day
      [:h1 "WORD OF THE DAY"]
+     [sa/Card "hello"
+      [sa/CardMeta "sdffhksda;iofsodifjsda fsdfsdofsdfjsd fsd fsodfhsdofhsodfh sdf sdfohsdofh"]]
      [:div.button-awesome
-      [:a.btn.btn-full {:href ""} "GET STARTED"]
-      ]]]
-   #_[:section.features
-    [:h3 [:center ""]]
-      [:p.copy ""]]])
+      [:a.btn.btn-full {:href ""} "GET STARTED"]]]]])
 
 (defn game-page
   []
