@@ -11,6 +11,25 @@
             [engless.subscriptions])
   (:import goog.History))
 
+
+(def word-day "http://urban-word-of-the-day.herokuapp.com/")
+
+
+(defn get-by-id
+  [id]
+  (.-value (.getElementById js/document id)))
+
+
+(defn log
+  [& params]
+  (.log js/console (apply str params)))
+
+
+(defn error-handler
+  []
+  (js/alert "Sorry you can not proceed :("))
+
+
 (defn nav-link [uri title page collapsed?]
   (let [selected-page (rf/subscribe [:page])]
     [:li.nav-item
@@ -20,39 +39,79 @@
        :on-click #(reset! collapsed? true)} title]]))
 
 
+(defn navbar []
+  (r/with-let [collapsed? (r/atom true)]
+    [:nav.navbar.navbar-dark.bg-primary
+     [:button.navbar-toggler.hidden-sm-up
+      {:on-click #(swap! collapsed? not)} "☰"]
+     [:div.collapse.navbar-toggleable-xs
+      (when-not @collapsed? {:class "in"})
+      [:ul.nav.navbar-nav
+       [nav-link "#/" "Home" :home collapsed?]
+       [nav-link "#/game" "Game" :game collapsed?]
+       [nav-link "#/dictionary" "Dictionary" :dictionary collapsed?]
+       [nav-link "#/revision" "Revision" :revision collapsed?]]]]))
+
+
+
+(defn word-of-the-day
+  []
+  (GET word-day
+       {:response-format :json
+        :keywords? true
+        :handler #(rf/dispatch [:word-day %])
+        :error-handler error-handler}))
+
+
 
 
 
 (defn home-page []
  [:div
-   [:header
+  [:header
+   [navbar]
     [:div.row
      [:div.logo
-      [:img {:src (str js/context "/img/Engless.jpg")}]]
-     [:ul.main-nav
-      [:li
-       [:a {:href ""} "Home"]]
-      [:li
-       [:a {:href ""} "Game"]]
-      [:li
-       [:a {:href ""} "Dictionary"]]
-      [:li
-       [:a {:href ""} "Contact us"]]]]
+      [:img {:src (str js/context "/img/Engless.png")}]]
+     ]
     [:div.hero
-     [:h1 "LEARNING IS A TREASURE THAT WILL" [:br] "FOLLOW ITS OWENER EVERYWHERE."]
+     [:h1 "WORD OF THE DAY"]
      [:div.button-awesome
-      [:a.btn.btn-full {:href ""} "Show more"]
+      [:a.btn.btn-full {:href ""} "GET STARTED"]
       ]]]
-   [:section.features
+   #_[:section.features
     [:h3 [:center ""]]
-    [:p.copy ""]]])
+      [:p.copy ""]]])
+
+(defn game-page
+  []
+  [:div
+   [:h2 "sds"]]
+  )
+
+
+(defn dictionary-page
+  []
+  [:div
+   [:h2 "sds"]]
+  )
+
+
+(defn revision-page
+  []
+  [:div
+   [:h2 "sds"]]
+  )
 
 (def pages
-  {:home #'home-page})
+  {:home #'home-page
+   :game #'game-page
+   :dictionary #'dictionary-page
+   :revision #'revision-page
+   })
 
 (defn page []
   [:div
-
    [(pages @(rf/subscribe [:page]))]])
 
 ;; -------------------------
@@ -62,6 +121,14 @@
 (secretary/defroute "/" []
   (rf/dispatch [:set-active-page :home]))
 
+(secretary/defroute "/game" []
+  (rf/dispatch [:set-active-page :game]))
+
+(secretary/defroute "/dictionary" []
+  (rf/dispatch [:set-active-page :dictionary]))
+
+(secretary/defroute "/revision" []
+  (rf/dispatch [:set-active-page :revision]))
 
 
 ;; -------------------------

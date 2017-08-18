@@ -79,3 +79,211 @@ Notifying browser that CSS file changed: resources/public/css/screen.css
 notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
 Notifying browser that CSS file changed: resources/public/css/screen.css
 Notifying browser that CSS file changed: resources/public/css/screen.css
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.471 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.471 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.557 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.473 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.468 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/engless/core.cljs   line:55  column:5  ----[0m
+
+  [1mUse of undeclared Var engless.core/navbar[0m
+
+  [36m51[0m  [36m  {:home #'home-page})[0m
+  [36m52[0m  [36m[0m
+  [36m53[0m  [36m(defn page [][0m
+  [36m54[0m  [36m  [:div[0m
+  [33m55[0m  [1m   [navbar][0m
+  [0m  [0m  [33m    ^--- Use of undeclared Var engless.core/navbar[0m
+  [36m56[0m  [36m   [(pages @(rf/subscribe [:page]))]])[0m
+  [36m57[0m  [36m[0m
+  [36m58[0m  [36m;; -------------------------[0m
+  [36m59[0m  [36m;; Routes[0m
+  [36m60[0m  [36m(secretary/set-config! :prefix "#")[0m
+
+[36m----  Compiler Warning : Please see src/cljs/engless/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.584 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.448 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.451 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+Notifying browser that CSS file changed: resources/public/css/screen.css
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.522 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.473 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.484 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.462 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.464 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+Notifying browser that CSS file changed: resources/public/css/screen.css
+Notifying browser that CSS file changed: resources/public/css/screen.css
+Notifying browser that CSS file changed: resources/public/css/screen.css
+Notifying browser that CSS file changed: resources/public/css/screen.css
+Notifying browser that CSS file changed: resources/public/css/screen.css
+Notifying browser that CSS file changed: resources/public/css/screen.css
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.462 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+Notifying browser that CSS file changed: resources/public/css/screen.css
+Notifying browser that CSS file changed: resources/public/css/screen.css
+Notifying browser that CSS file changed: resources/public/css/screen.css
+Notifying browser that CSS file changed: resources/public/css/screen.css
+Notifying browser that CSS file changed: resources/public/css/screen.css
+Notifying browser that CSS file changed: resources/public/css/screen.css
+Notifying browser that CSS file changed: resources/public/css/screen.css
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.261 seconds.[0m
+[36m----  Could not Analyze  src/cljs/engless/core.cljs   line:54  column:1  ----[0m
+
+  [1mToo many arguments to def at line 54 /home/rupesh/EngLess/engless/src/cljs/engless/core.cljs[0m
+
+  [36m52[0m  [36m    [:p.copy ""]]])[0m
+  [36m53[0m  [36m[0m
+  [33m54[0m  [1m(def pages[0m
+  [0m  [0m  [33m^--- Too many arguments to def at line 54 /home/rupesh/EngLess/engless/src/cljs/engless/core.cljs[0m
+  [36m55[0m  [36m  {:home #'home-page}[0m
+  [36m56[0m  [36m  {:game #'game-page}[0m
+  [36m57[0m  [36m  {:dictionary #'dictionary-page}[0m
+
+[36m----  Analysis Error : Please see src/cljs/engless/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.284 seconds.[0m
+[36m----  Could not Analyze  src/cljs/engless/core.cljs   line:68  column:1  ----[0m
+
+  [1mToo many arguments to def at line 68 /home/rupesh/EngLess/engless/src/cljs/engless/core.cljs[0m
+
+  [36m66[0m  [36m  )[0m
+  [36m67[0m  [36m[0m
+  [33m68[0m  [1m(def pages[0m
+  [0m  [0m  [33m^--- Too many arguments to def at line 68 /home/rupesh/EngLess/engless/src/cljs/engless/core.cljs[0m
+  [36m69[0m  [36m  {:home #'home-page}[0m
+  [36m70[0m  [36m  {:game #'game-page}[0m
+  [36m71[0m  [36m  {:dictionary #'dictionary-page}[0m
+
+[36m----  Analysis Error : Please see src/cljs/engless/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.262 seconds.[0m
+[36m----  Could not Analyze  src/cljs/engless/core.cljs   line:68  column:1  ----[0m
+
+  [1mToo many arguments to def at line 68 /home/rupesh/EngLess/engless/src/cljs/engless/core.cljs[0m
+
+  [36m66[0m  [36m  )[0m
+  [36m67[0m  [36m[0m
+  [33m68[0m  [1m(def pages[0m
+  [0m  [0m  [33m^--- Too many arguments to def at line 68 /home/rupesh/EngLess/engless/src/cljs/engless/core.cljs[0m
+  [36m69[0m  [36m  {:home #'home-page}[0m
+  [36m70[0m  [36m  {:game #'game-page}[0m
+  [36m71[0m  [36m  {:dictionary #'dictionary-page}[0m
+
+[36m----  Analysis Error : Please see src/cljs/engless/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.472 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.494 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.471 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.47 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/engless/core.cljs   line:20  column:31  ----[0m
+
+  [1mUse of undeclared Var engless.core/params[0m
+
+  [36m18[0m  [36m(defn log[0m
+  [36m19[0m  [36m  [&params][0m
+  [33m20[0m  [1m  (.log js/console (apply str params)))[0m
+  [0m  [0m  [33m                              ^--- Use of undeclared Var engless.core/params[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m[0m
+  [36m23[0m  [36m(defn error-handler[0m
+  [36m24[0m  [36m  [][0m
+  [36m25[0m  [36m  (js/alert "Sorry you can not proceed :("))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/engless/core.cljs  ----[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.317 seconds.[0m
+[36m----  Could not Read  src/cljs/engless/core.cljs   line:58 ----[0m
+
+  [1m/home/rupesh/EngLess/engless/src/cljs/engless/core.cljs [line 58, col 25] The map literal starting with :response-format on line 55 column 8 contains 7 form(s). Map literals must contain an even number of forms.[0m
+
+  [36m56[0m  [36m:keywords? true[0m
+  [36m57[0m  [36m:handler #(rf/dispatch [:word-day %])[0m
+  [33m58[0m  [1m:error-handler }))[0m
+  [0m  [0m  [33m/home/rupesh/EngLess/engless/src/cljs/engless/core.cljs [line 58, col 25] The map literal starting with :response-format on line 55 column 8 contains 7 form(s). Map literals must contain an even number of forms.[0m
+
+[36m----  Reader Error : Please see src/cljs/engless/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/engless/core.cljs   line:25  column:31  ----[0m
+
+  [1mUse of undeclared Var engless.core/params[0m
+
+  [36m23[0m  [36m(defn log[0m
+  [36m24[0m  [36m  [&params][0m
+  [33m25[0m  [1m  (.log js/console (apply str params)))[0m
+  [0m  [0m  [33m                              ^--- Use of undeclared Var engless.core/params[0m
+  [36m26[0m  [36m[0m
+  [36m27[0m  [36m[0m
+  [36m28[0m  [36m(defn error-handler[0m
+  [36m29[0m  [36m  [][0m
+  [36m30[0m  [36m  (js/alert "Sorry you can not proceed :("))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/engless/core.cljs  ----[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.296 seconds.[0m
+[36m----  Could not Read  src/cljs/engless/core.cljs   line:63 ----[0m
+
+  [1m/home/rupesh/EngLess/engless/src/cljs/engless/core.cljs [line 63, col 25] The map literal starting with :response-format on line 60 column 8 contains 7 form(s). Map literals must contain an even number of forms.[0m
+
+  [36m61[0m  [36m:keywords? true[0m
+  [36m62[0m  [36m:handler #(rf/dispatch [:word-day %])[0m
+  [33m63[0m  [1m:error-handler }))[0m
+  [0m  [0m  [33m/home/rupesh/EngLess/engless/src/cljs/engless/core.cljs [line 63, col 25] The map literal starting with :response-format on line 60 column 8 contains 7 form(s). Map literals must contain an even number of forms.[0m
+
+[36m----  Reader Error : Please see src/cljs/engless/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/engless/core.cljs   line:25  column:31  ----[0m
+
+  [1mUse of undeclared Var engless.core/params[0m
+
+  [36m23[0m  [36m(defn log[0m
+  [36m24[0m  [36m  [&params][0m
+  [33m25[0m  [1m  (.log js/console (apply str params)))[0m
+  [0m  [0m  [33m                              ^--- Use of undeclared Var engless.core/params[0m
+  [36m26[0m  [36m[0m
+  [36m27[0m  [36m[0m
+  [36m28[0m  [36m(defn error-handler[0m
+  [36m29[0m  [36m  [][0m
+  [36m30[0m  [36m  (js/alert "Sorry you can not proceed :("))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/engless/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.567 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.527 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.459 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
