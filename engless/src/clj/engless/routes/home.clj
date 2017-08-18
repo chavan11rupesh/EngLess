@@ -10,9 +10,16 @@
 
 (def word-day "http://urban-word-of-the-day.herokuapp.com")
 
+
+(def dictionary "http://api.pearson.com/v2/dictionaries/entries?headword=")
+
 (defn home-page []
   (layout/render "home.html"))
 
+
+(defn get-dict-word
+  [word]
+  (client/get (str dictionary word)))
 
 
 (defn get-word
@@ -37,6 +44,9 @@
 
   (GET "/word-day" []
        (get-word))
+
+  (GET "/dictionary" [word]
+       (get-dict-word word))
 
   (GET "/word" [level]
        (layout/render-json (view/get-word-of level))))

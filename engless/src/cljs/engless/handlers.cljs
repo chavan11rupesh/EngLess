@@ -22,7 +22,18 @@
  (fn [db [_ word-day]]
    (assoc db :word-day word-day)))
 
+
 (reg-event-db
  :words
  (fn [db [_ location]]
    (assoc db :words location)))
+
+(reg-event-db
+ :user-data
+ (fn [db [_ user-data]]
+   (assoc db :user-data user-data)))
+
+(reg-event-db
+ :word-level
+ (fn [db [_ word-level]]
+   (assoc db :word-level word-level)))
