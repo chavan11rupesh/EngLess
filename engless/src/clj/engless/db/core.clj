@@ -3,7 +3,8 @@
               [monger.collection :as mc]
               [monger.operators :refer :all]
               [mount.core :refer [defstate]]
-              [engless.config :refer [env]]))
+              [engless.config :refer [env]]
+              [monger.result :refer [acknowledged?]]))
 
 (defstate db*
   :start (-> env :database-url mg/connect-via-uri)
@@ -14,6 +15,12 @@
 
 (defn create-user [user]
   (mc/insert db "users" user))
+
+
+(defn insert-user-db [user password email]
+  (acknowledged? (mc/insert db "users" {:user user
+                                        :pass password
+                                        :email email})))
 
 (defn update-user [id first-name last-name email]
   (mc/update db "users" {:_id id}

@@ -65,8 +65,6 @@
 
 
 
-
-
 (defn home-page []
   [:div
    [:header
@@ -75,11 +73,17 @@
      [:div.logo
       [:img {:src (str js/context "/img/Engless.png")}]]]
     [:div.word-day
+
+ [:div
+  [:header
+   [navbar]
+    [:div.hero
      [:h1 "WORD OF THE DAY"]
      [sa/Card "hello"
       [sa/CardMeta "sdffhksda;iofsodifjsda fsdfsdofsdfjsd fsd fsodfhsdofhsodfh sdf sdfohsdofh"]]
      [:div.button-awesome
       [:a.btn.btn-full {:href ""} "GET STARTED"]]]]])
+
 
 (defn game-page
   []
