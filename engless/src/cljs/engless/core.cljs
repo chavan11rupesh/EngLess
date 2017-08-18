@@ -28,7 +28,7 @@
 
 (defn error-handler
   []
-  (js/alert "Sorry you can not proceed :("))
+  (js/alert "Error!"))
 
 
 (defn nav-link [uri title page collapsed?]
@@ -65,20 +65,21 @@
 
 
 
+
 (defn home-page []
   (word-of-the-day)
-  [:div
-   [:header
-    [navbar]
-    [:div.row
-     [:div.logo
-      [:img {:src (str js/context "/img/Engless.png")}]]]
-    [:div.word-day
-     [:h1 "WORD OF THE DAY"]
-     [sa/Card "hello"
-      [sa/CardMeta "sdffhksda;iofsodifjsda fsdfsdofsdfjsd fsd fsodfhsdofhsodfh sdf sdfohsdofh"]]
-     [:div.button-awesome
-      [:a.btn.btn-full {:href ""} "GET STARTED"]]]]])
+  [:div.home
+   [:div.row
+    [:div.logo
+     [:img {:src (str js/context "/img/Engless.png")}]]]
+   [:div.word-day
+    [:h1 "WORD OF THE DAY"]
+    [sa/Card
+     [sa/CardHeader  (@(rf/subscribe [:word-day]) :word)]
+     [sa/CardMeta  (@(rf/subscribe [:word-day]) :meaning)]]
+    [:div.button-awesome
+     [:a.btn.btn-full {:href "#"} "GET STARTED"]]]])
+
 
 
 (defn game-page
@@ -110,6 +111,7 @@
 
 (defn page []
   [:div
+   [navbar]
    [(pages @(rf/subscribe [:page]))]])
 
 ;; -------------------------

@@ -10,3 +10,8 @@
   :docs
   (fn [db _]
     (:docs db)))
+
+(reg-sub
+ :word-day
+ (fn [db _]
+   (or (:word-day db) {})))
