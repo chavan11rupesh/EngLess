@@ -41,10 +41,10 @@
 
 
 
-(defn save-words [user word meaning usage]
-  (mc/insert db user  {:word word
-                               :mean meaning
-                               :usage usage}))
+(defn save-word [user word meaning usage]
+  (acknowledged? (mc/insert db user  {:word word
+                                      :mean meaning
+                                      :usage usage})))
 
 (defn return-words-at [location]
   (mc/find-maps db "words" {:locn location}))

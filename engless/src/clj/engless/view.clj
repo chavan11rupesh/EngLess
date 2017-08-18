@@ -27,3 +27,9 @@
   [user]
   (map #(dissoc % :_id)
        (db/get-saved-words user)))
+(defn save-word
+  [user map-word]
+  (db/save-word user
+                (map-word :word)
+                (map-word :mean)
+                (map-word :usage)))

@@ -98,6 +98,31 @@
       [:a.btn.btn-full {:href "#/words"} "GET STARTED"]]]]])
 
 
+(defn get-saved-words
+  [user]
+  (GET (str server "saved-words")
+       {:params {:user user}
+        :format :json
+        :response-format :json
+        :keywords? true
+        :handler #(rf/dispatch [:saved-words %])}))
+
+
+(defn save-word
+  [map-word]
+  (let [user @(rf/subscribe [:user])]
+    (log "@@@@" map-word user)
+    (POST (str server "save-word")
+          {:params {:user user
+                    :map-word map-word}
+           :format :json
+           :response-format :json
+           :keywords? true
+           :handler (fn [e]
+                      (js/alert "Word Saved! \nSwitch to Revision Page to view!")
+                      (get-saved-words user))
+           :error-handler #(js/alert "error")})))
+
 
 
 (defn dictionary-handler
@@ -107,8 +132,8 @@
     (if (empty? defination)
       (js/alert "Word Not Found!")
       (rf/dispatch [:dict-meaning {:word word
-                                   :mean (:definition defination)
-                                   :usage (:text usage)}]))))
+                                   :mean (str/capitalize (:definition defination))
+                                   :usage (str/capitalize (:text usage))}]))))
 
 
 
@@ -123,7 +148,7 @@
     [:h2 {:style {:color "White"}} "Search for?"]
     [:form {
             :on-submit (fn []
-                         (let [word (get-by-id "dict-search")]
+                         (let [word (str/capitalize (get-by-id "dict-search"))]
                            (GET (str server "dictionary")
                                 {:params {:word word}
                                  :format :json
@@ -133,15 +158,20 @@
                                  :error-handler error-handler})))}
      [:input {:type "text" :id "dict-search"}]
      [:input {:type "submit" :value "Go"}]]
-    [:h3 (str "Last Word : " (:word @(rf/subscribe [:dict-meaning])))]
-    [sa/Card
-     [sa/CardContent
-      [sa/CardMeta "Meaning"]
-      [sa/CardDescription (str/capitalize (:mean @(rf/subscribe [:dict-meaning])))]]]
-    [sa/Card
-     [sa/CardContent
-      [sa/CardMeta "Usage"]
-      [sa/CardDescription (str/capitalize (:usage @(rf/subscribe [:dict-meaning])))]]]]])
+    (let [dict-word @(rf/subscribe [:dict-meaning])]
+      [sa/Card
+       [sa/CardContent
+        [sa/CardHeader (:word dict-word)]
+        [sa/CardMeta "Meaning"]
+        [sa/CardDescription (:mean dict-word)]
+        [sa/CardMeta "Usage"]
+        [sa/CardDescription (:usage dict-word)]]
+       [sa/CardContent {:extra true}
+        [:div.ui.two.buttons
+         [sa/Button {:onClick #(save-word dict-word)
+                     :color "green"} "Save"]
+         [sa/Button {
+                     :color "red"} "Share"]]]])]])
 
 
 
@@ -195,21 +225,19 @@
    [words-of-location]])
 
 
+
+
 (defn login-handler
   "when logged in then play game"
   [response]
-  (println response)
   (when response
-    (rf/dispatch [:logged-in true])
-    (let [level (response :levl)]
-           (GET (str server "word")
-                {:params {:level level}
-                 :format :json
-                 :response-format :json
-                 :keywords? true
-                 :handler #(rf/dispatch [:word-level %])}))
-    (println "hsdfsd")
-    (rf/dispatch [:set-active-page :game])))
+    (let [user (response :name)]
+      (log "####" response)
+      (rf/dispatch [:user (response :name)])
+      (rf/dispatch [:logged-in :true])
+      (log "$$" @(rf/subscribe [:user]))
+      (get-saved-words user)
+      (rf/dispatch [:set-active-page :game]))))
 
 
 (defn register-handler
@@ -302,12 +330,23 @@
        [register-modal]]]]))
 
 
+(defn saved-words
+  [map-word]
+  [sa/Card
+   [sa/CardContent
+    [sa/CardHeader (map-word :word)]
+    [sa/CardMeta "Meaning"]
+    [sa/CardDescription (map-word :mean)]
+    [sa/CardMeta "Usage"]
+    [sa/CardDescription (map-word :usage)]]])
 
 
 (defn revision-page
   []
-  [:div
-   [:h2 "sds"]])
+  [:div.home
+   [:div.word-day
+    [sa/CardGroup
+     (doall (map saved-words @(rf/subscribe [:saved-words])))]]])
 
 (def pages
   {:home #'home-page

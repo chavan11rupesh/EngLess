@@ -890,3 +890,293 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/engless/cor
 [0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.579 seconds.[0m
 notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.805 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.788 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.741 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.811 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.687 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.596 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.675 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/subscriptions.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.617 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.57 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.578 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.627 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.569 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.57 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.582 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/engless/core.cljs   line:145  column:42  ----[0m
+
+  [1mUse of undeclared Var re-frame.core/subsribe[0m
+
+  [36m141[0m  [36m [sa/CardMeta "Usage"][0m
+  [36m142[0m  [36m [sa/CardDescription (str/capitalize (:usage @(rf/subscribe [:dict-meaning])))]][0m
+  [36m143[0m  [36m[sa/CardContent {:extra true}[0m
+  [36m144[0m  [36m [:div.ui.two.buttons[0m
+  [33m145[0m  [1m  [sa/Button {:onClick #(js/alert @(rf/subsribe [:dict-meaning]))[0m
+  [0m   [0m  [33m                                    ^--- Use of undeclared Var re-frame.core/subsribe[0m
+  [36m146[0m  [36m              :color "green"} "Save"][0m
+  [36m147[0m  [36m  [sa/Button {[0m
+  [36m148[0m  [36m              :color "red"} "Share"]]]]]])[0m
+
+[36m----  Compiler Warning : Please see src/cljs/engless/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.857 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.867 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.648 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.681 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/engless/core.cljs   line:146  column:33  ----[0m
+
+  [1mUse of undeclared Var engless.core/save-word[0m
+
+  [36m142[0m  [36m [sa/CardMeta "Usage"][0m
+  [36m143[0m  [36m [sa/CardDescription (:usage dict-word)]][0m
+  [36m144[0m  [36m[sa/CardContent {:extra true}[0m
+  [36m145[0m  [36m [:div.ui.two.buttons[0m
+  [33m146[0m  [1m  [sa/Button {:onClick #(save-word dict-word)[0m
+  [0m   [0m  [33m                         ^--- Use of undeclared Var engless.core/save-word[0m
+  [36m147[0m  [36m              :color "green"} "Save"][0m
+  [36m148[0m  [36m  [sa/Button {[0m
+  [36m149[0m  [36m              :color "red"} "Share"]]]])]])[0m
+
+[36m----  Compiler Warning : Please see src/cljs/engless/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.643 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.736 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.873 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.891 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/handlers.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.792 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/subscriptions.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/engless/core.cljs   line:104  column:16  ----[0m
+
+  [1mUse of undeclared Var re-frame.core/subsribe[0m
+
+  [36m102[0m  [36m(defn save-word[0m
+  [36m103[0m  [36m  [map-word][0m
+  [33m104[0m  [1m  (let [user @(rf/subsribe [:user])])[0m
+  [0m   [0m  [33m               ^--- Use of undeclared Var re-frame.core/subsribe[0m
+  [36m105[0m  [36m  (POST (str server "save-word")[0m
+  [36m106[0m  [36m        {:params {:user user[0m
+  [36m107[0m  [36m                  :map-word map-word}[0m
+  [36m108[0m  [36m         :format :json[0m
+  [36m109[0m  [36m         :response-format :json[0m
+
+[36m----  Compiler Warning : Please see src/cljs/engless/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/engless/core.cljs   line:106  column:25  ----[0m
+
+  [1mUse of undeclared Var engless.core/user[0m
+
+  [36m102[0m  [36m(defn save-word[0m
+  [36m103[0m  [36m  [map-word][0m
+  [36m104[0m  [36m  (let [user @(rf/subsribe [:user])])[0m
+  [36m105[0m  [36m  (POST (str server "save-word")[0m
+  [33m106[0m  [1m        {:params {:user user[0m
+  [0m   [0m  [33m                        ^--- Use of undeclared Var engless.core/user[0m
+  [36m107[0m  [36m                  :map-word map-word}[0m
+  [36m108[0m  [36m         :format :json[0m
+  [36m109[0m  [36m         :response-format :json[0m
+  [36m110[0m  [36m         :keywords? true[0m
+  [36m111[0m  [36m         :handler #(js/alert %)}))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/engless/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.729 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/engless/core.cljs   line:106  column:25  ----[0m
+
+  [1mUse of undeclared Var engless.core/user[0m
+
+  [36m102[0m  [36m(defn save-word[0m
+  [36m103[0m  [36m  [map-word][0m
+  [36m104[0m  [36m  (let [user @(rf/subscribe [:user])])[0m
+  [36m105[0m  [36m  (POST (str server "save-word")[0m
+  [33m106[0m  [1m        {:params {:user user[0m
+  [0m   [0m  [33m                        ^--- Use of undeclared Var engless.core/user[0m
+  [36m107[0m  [36m                  :map-word map-word}[0m
+  [36m108[0m  [36m         :format :json[0m
+  [36m109[0m  [36m         :response-format :json[0m
+  [36m110[0m  [36m         :keywords? true[0m
+  [36m111[0m  [36m         :handler #(js/alert %)}))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/engless/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.875 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.644 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.588 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.785 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.759 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/engless/core.cljs   line:112  column:23  ----[0m
+
+  [1mUse of undeclared Var engless.core/get-saved-words[0m
+
+  [36m108[0m  [36m                    :map-word map-word}[0m
+  [36m109[0m  [36m           :format :json[0m
+  [36m110[0m  [36m           :response-format :json[0m
+  [36m111[0m  [36m           :keywords? true[0m
+  [33m112[0m  [1m           :handler #(get-saved-words)[0m
+  [0m   [0m  [33m                      ^--- Use of undeclared Var engless.core/get-saved-words[0m
+  [36m113[0m  [36m           :error-handler #(js/alert "error")})))[0m
+  [36m114[0m  [36m[0m
+  [36m115[0m  [36m[0m
+  [36m116[0m  [36m[0m
+  [36m117[0m  [36m(defn dictionary-handler[0m
+
+[36m----  Compiler Warning : Please see src/cljs/engless/core.cljs  ----[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.371 seconds.[0m
+[36m----  Could not Analyze  src/cljs/engless/core.cljs   line:216  column:1  ----[0m
+
+  [1mParameter declaration "let" should be a vector[0m
+
+  [36m214[0m  [36m   [words-of-location]])[0m
+  [36m215[0m  [36m[0m
+  [33m216[0m  [1m(defn get-saved-words[0m
+  [0m   [0m  [33m^--- Parameter declaration "let" should be a vector[0m
+  [36m217[0m  [36m  (let [user @(rf/subscribe [:user])][0m
+  [36m218[0m  [36m    (GET (str server "saved-words")[0m
+  [36m219[0m  [36m         {:params {:user user}[0m
+
+[36m----  Analysis Error : Please see src/cljs/engless/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/engless/core.cljs   line:112  column:23  ----[0m
+
+  [1mUse of undeclared Var engless.core/get-saved-words[0m
+
+  [36m108[0m  [36m                    :map-word map-word}[0m
+  [36m109[0m  [36m           :format :json[0m
+  [36m110[0m  [36m           :response-format :json[0m
+  [36m111[0m  [36m           :keywords? true[0m
+  [33m112[0m  [1m           :handler #(get-saved-words)[0m
+  [0m   [0m  [33m                      ^--- Use of undeclared Var engless.core/get-saved-words[0m
+  [36m113[0m  [36m           :error-handler #(js/alert "error")})))[0m
+  [36m114[0m  [36m[0m
+  [36m115[0m  [36m[0m
+  [36m116[0m  [36m[0m
+  [36m117[0m  [36m(defn dictionary-handler[0m
+
+[36m----  Compiler Warning : Please see src/cljs/engless/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.733 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.729 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.612 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.684 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.8 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/subscriptions.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.627 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/subscriptions.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/engless/core.cljs   line:236  column:17  ----[0m
+
+  [1mUse of undeclared Var re-frame.core/subsribe[0m
+
+  [36m232[0m  [36m  (when response[0m
+  [36m233[0m  [36m    (log "####" response)[0m
+  [36m234[0m  [36m    (rf/dispatch [:user (response :name)])[0m
+  [36m235[0m  [36m    (rf/dispatch [:logged-in :true])[0m
+  [33m236[0m  [1m    (log "$$" @(rf/subsribe [:user]))[0m
+  [0m   [0m  [33m                ^--- Use of undeclared Var re-frame.core/subsribe[0m
+  [36m237[0m  [36m    (get-saved-words)[0m
+  [36m238[0m  [36m    (rf/dispatch [:set-active-page :game])))[0m
+  [36m239[0m  [36m[0m
+  [36m240[0m  [36m[0m
+  [36m241[0m  [36m(defn register-handler[0m
+
+[36m----  Compiler Warning : Please see src/cljs/engless/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.65 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.635 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/engless/core.cljs   line:121  column:22  ----[0m
+
+  [1mWrong number of args (0) passed to engless.core/get-saved-words[0m
+
+  [36m117[0m  [36m                    :map-word map-word}[0m
+  [36m118[0m  [36m           :format :json[0m
+  [36m119[0m  [36m           :response-format :json[0m
+  [36m120[0m  [36m           :keywords? true[0m
+  [33m121[0m  [1m           :handler #(get-saved-words)[0m
+  [0m   [0m  [33m                     ^--- Wrong number of args (0) passed to engless.core/get-saved-words[0m
+  [36m122[0m  [36m           :error-handler #(js/alert "error")})))[0m
+  [36m123[0m  [36m[0m
+  [36m124[0m  [36m[0m
+  [36m125[0m  [36m[0m
+  [36m126[0m  [36m(defn dictionary-handler[0m
+
+[36m----  Compiler Warning : Please see src/cljs/engless/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.664 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.666 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.628 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/engless/core.js

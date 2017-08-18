@@ -51,5 +51,8 @@
   (GET "/word" [level]
        (layout/render-json (view/get-word-of level)))
 
+  (POST "/save-word" [user map-word]
+        (layout/render-json (view/save-word user map-word)))
+
   (GET "/saved-words" [user]
        (layout/render-json (view/get-saved-words user))))

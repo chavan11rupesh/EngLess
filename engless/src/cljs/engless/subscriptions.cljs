@@ -22,6 +22,10 @@
    (or (:dict-meaning db) {:mean ""
                            :usage ""})))
 
+(reg-sub
+ :saved-words
+ (fn [db _]
+   (or (:saved-words db) {})))
 
 (reg-sub
  :words
@@ -32,3 +36,9 @@
  :logged-in
  (fn [db _]
    (or (:logged-in db) false)))
+
+
+(reg-sub
+ :user
+ (fn [db _]
+   (or (:user db) " ")))

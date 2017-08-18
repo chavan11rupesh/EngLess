@@ -49,8 +49,17 @@
  (fn [db [_ meaning]]
    (assoc db :dict-meaning meaning)))
 
+(reg-event-db
+ :saved-words
+ (fn [db [_ value]]
+   (assoc db :saved-words value)))
+
 
 (reg-event-db
  :logged-in
  (fn [db [_ value]]
    (assoc db :logged-in value)))
+(reg-event-db
+ :user
+ (fn [db [_ user]]
+   (assoc db :user user)))
