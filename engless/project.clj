@@ -48,7 +48,10 @@
 
   :plugins [[lein-cprop "1.0.3"]
             [lein-cljsbuild "1.1.5"]
-            [lein-immutant "2.1.0"]]
+            [lein-immutant "2.1.0"]
+            [lein-expectations "0.0.8"]
+            [lein-autoexpect "1.9.0"]
+            [lein-auto "0.1.3"]]
   :clean-targets ^{:protect false}
   [:target-path [:cljsbuild :builds :app :compiler :output-dir] [:cljsbuild :builds :app :compiler :output-to]]
   :figwheel
