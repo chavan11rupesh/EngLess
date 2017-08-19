@@ -4,7 +4,26 @@
             [ring.util.http-response :as response]
             [clojure.java.io :as io]
             [clj-http.client :as client]
-            [engless.view :as view]))
+            [engless.view :as view]
+            [postal.core :refer [send-message]]))
+
+
+(def conn {:host "smtp.gmail.com"
+           :ssl true
+           :user "rupeshbhavesh11@gmail.com"
+           :pass "rupeshbhavesh11"})
+
+
+(defn send-mail
+  [email map-word-data]
+  (send-message conn {:from "rupeshbhavesh11@gmail.com"
+                      :to email
+                      :subject "Share from EngLess"
+                      :body (str (map-word-data :word) "\n"
+                                 "meaning\n"
+                                 (map-word-data :mean) "\n"
+                                 "usage\n"
+                                 (map-word-data :usage))}))
 
 
 
@@ -58,7 +77,7 @@
 
 
   (GET "/send-mail" [email map-word-data]
-       (layout/render-json (view/send-mail email map-word-data)))
+       (layout/render-json (send-mail email map-word-data)))
 
   (GET "/saved-words" [user]
        (layout/render-json (view/get-saved-words user))))

@@ -14,7 +14,7 @@
   (:import goog.History))
 
 (enable-console-print!)
-(println "dev mode")
+
 
 
 
@@ -29,7 +29,7 @@
 
 (defn login-error
   []
-  (js/alert "Failed to logged in!"))
+  (js/alert "Failed to log in!"))
 
 (defn get-by-id
   [id]
@@ -123,6 +123,17 @@
                       (get-saved-words user))
            :error-handler #(js/alert "error")})))
 
+(defn send-mail
+  [map-word]
+  (if-let [email (js/prompt "Enter Email:")]
+    (GET (str server "send-mail")
+         {:params {:email email
+                   :map-word-data map-word}
+          :format :json
+          :response-format :json
+          :keywords? true
+          :handler #(js/alert "Email sent successfully!")
+          :error-handler #(js/alert "Unable to send email")})))
 
 
 (defn dictionary-handler
@@ -134,9 +145,6 @@
       (rf/dispatch [:dict-meaning {:word word
                                    :mean (str/capitalize (:definition defination))
                                    :usage (str/capitalize (:text usage))}]))))
-
-
-
 
 
 
@@ -170,7 +178,7 @@
         [:div.ui.two.buttons
          [sa/Button {:onClick #(save-word dict-word)
                      :color "green"} "Save"]
-         [sa/Button {
+         [sa/Button {:onClick #(send-mail dict-word)
                      :color "red"} "Share"]]]])]])
 
 
@@ -191,6 +199,7 @@
         :keywords? true
         :handler #(rf/dispatch [:words %])
         :error-handler error-handler}))
+
 
 (defn word-item
   [word-map]
@@ -232,10 +241,8 @@
   [response]
   (when response
     (let [user (response :name)]
-      (log "####" response)
       (rf/dispatch [:user (response :name)])
       (rf/dispatch [:logged-in :true])
-      (log "$$" @(rf/subscribe [:user]))
       (get-saved-words user)
       (rf/dispatch [:set-active-page :game]))))
 
@@ -354,8 +361,7 @@
    :game #'game-page
    :dictionary #'dictionary-page
    :revision #'revision-page
-   :words #'words-page
-   })
+   :words #'words-page})
 
 (defn page []
   [:div
@@ -397,8 +403,7 @@
 
 ;; -------------------------
 ;; Initialize app
-(defn fetch-docs! []
-  (GET "/docs" {:handler #(rf/dispatch [:set-docs %])}))
+
 
 (defn mount-components []
   (rf/clear-subscription-cache!)
@@ -407,7 +412,6 @@
 (defn init! []
   (rf/dispatch-sync [:initialize-db])
   (load-interceptors!)
-  (fetch-docs!)
   (hook-browser-navigation!)
   (mount-components)
   (word-of-the-day))

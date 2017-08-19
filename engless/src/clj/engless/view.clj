@@ -1,7 +1,6 @@
 (ns engless.view
   (:require [engless.layout :as layout]
-            [engless.db.core :as db]
-            [postal.core :refer [send-message]])
+            [engless.db.core :as db])
   (:gen-class))
 
 
@@ -39,18 +38,3 @@
                 (map-word :word)
                 (map-word :mean)
                 (map-word :usage)))
-
-
-
-(def conn {:host "smtp.gmail.com"
-           :ssl true
-           :user "rupeshbhavesh11@gmail.com"
-           :pass "rupeshbhavesh11"})
-
-
-(defn send-mail
-  [email map-word-data]
-  (send-message conn {:from "rupeshbhavesh11@gmail.com"
-                      :to email
-                      :subject "Welcome To EngLess"
-                      :body "hello"}))
